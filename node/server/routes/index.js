@@ -14,5 +14,10 @@ module.exports = () => {
             .then(json => res.json(json))
     })
 
+    app.post('/postdata', (req, res) => {
+        console.log(req.body)
+        console.log('boy painting')
+    })
+
     return app;
 }

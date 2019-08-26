@@ -46,6 +46,8 @@ class App extends Component {
           let gain = closeYest - closeTod;
           let percent = (gain / closeYest) * 100;
 
+          console.log(yesterday)
+
           this.setState({
             open: parseFloat(today['1. open']).toFixed(2),
             high: parseFloat(today['2. high']).toFixed(2),
@@ -74,7 +76,7 @@ class App extends Component {
 
         <form onChange={this.handleChange} className="form-style">
           <div className="upcoming">
-            <h2>Upcoming Earnings</h2>
+            <h2>Financial Info</h2>
           </div>
           <div className="select">
             Company: 

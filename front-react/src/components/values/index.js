@@ -1,6 +1,25 @@
 import React, {Component} from 'react';
 import './styles.css';
 
+function Data(props) {
+  if(props.usd < 0) {
+    return (
+      <div className="red-data">
+        <h2>USD {props.usd}</h2>
+        <h4>% {props.percent}</h4>
+      </div>
+    )
+  }
+
+  return (
+    <div className="green-data">
+      <h2>USD {props.usd}</h2>
+      <h4>% {props.percent}</h4>
+    </div>
+  )
+
+}
+
 class Values extends Component {
     constructor(props) {
       super(props);
@@ -20,30 +39,25 @@ class Values extends Component {
                       <h1>
                           USD {this.props.close}
                       </h1>
-                      <h2>
-                          USD {this.props.gain}
-                      </h2>
-                      <h4>
-                          % {this.props.percent}
-                      </h4>
+                      <Data usd={this.props.gain} percent={this.props.percent}/>
                   </div>
               </div>
               <div className="col-sm-6">
                 <div className="row">
                     <div className="col-sm-6">
                         <div className="box-info">
-                            <h3>Open: {this.props.open}</h3>
+                            <h3>Open {this.props.open}</h3>
                         </div>
                         <div className="box-info">
-                            <h3>High: {this.props.high}</h3>
+                            <h3>High {this.props.high}</h3>
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className="box-info">
-                            <h3>Low: {this.props.low}</h3>
+                            <h3>Low {this.props.low}</h3>
                         </div>
                         <div className="box-info">
-                            <h3>Close: {this.props.close}</h3>
+                            <h3>Close {this.props.close}</h3>
                         </div>
                     </div>
                 </div>

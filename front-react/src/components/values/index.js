@@ -3,18 +3,20 @@ import './styles.css';
 
 function Data(props) {
   if(props.usd < 0) {
+    let usd = props.usd * (-1);
+    let percent = props.percent * (-1);
     return (
-      <div className="red-data">
-        <h2>USD {props.usd}</h2>
-        <h4>% {props.percent}</h4>
+      <div className="green-data">
+        <h2>USD {usd}</h2>
+        <h4>% {percent} <span className="up-low-font"> UP</span></h4>
       </div>
     )
   }
 
   return (
-    <div className="green-data">
+    <div className="red-data">
       <h2>USD {props.usd}</h2>
-      <h4>% {props.percent}</h4>
+      <h4>% {props.percent} <span className="up-low-font"> LOW</span></h4>
     </div>
   )
 
@@ -36,10 +38,13 @@ class Values extends Component {
                   </div>
                   <div className="separator"></div>
                   <div className="box">
+                      
                       <h1>
                           USD {this.props.close}
                       </h1>
+
                       <Data usd={this.props.gain} percent={this.props.percent}/>
+                  
                   </div>
               </div>
               <div className="col-sm-6">

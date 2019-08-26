@@ -1,0 +1,21 @@
+.values-styles {
+    color: rgb(36, 49, 163);
+    background-color: rgba(250, 249, 249, 0.979);
+    padding: 10px 10px;
+}
+
+.box {
+    padding: 10px 5px;
+}
+
+.box-info {
+    color: white;
+    margin: 25px 15px;
+    padding: 25px;
+    background-color: rgb(11, 11, 56);
+}
+
+.separator {
+    background-color: rgb(51, 50, 50);
+    height: 3px;
+}
